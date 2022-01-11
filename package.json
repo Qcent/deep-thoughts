@@ -1,0 +1,19 @@
+{
+  "name": "deep-thoughts",
+  "version": "1.0.0",
+  "description": "A MERN developed Social Network site, using GraphQl, Apollo, and JWTs.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Qcent/deep-thoughts.git"
+  },
+  "author": "Dave Quinn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Qcent/deep-thoughts/issues"
+  },
+  "homepage": "https://github.com/Qcent/deep-thoughts#readme"
+}
