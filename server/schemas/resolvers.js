@@ -91,7 +91,6 @@ const resolvers = {
                 return updatedUser;
             }
 
-            console.log(context.user)
             throw new AuthenticationError('You need to be logged in!');
         }
 
