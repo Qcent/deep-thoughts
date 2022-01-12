@@ -8,7 +8,7 @@ const resolvers = {
         // get the information of the logged in user by JWT
         me: async(parent, args, context) => {
             if (context.user) {
-                const userData = await User.findOne({ username: context.user.username })
+                const userData = await User.findOne({ _id: context.user._id })
                     .select('-__v -password')
                     .populate('thoughts')
                     .populate('friends');
@@ -84,6 +84,16 @@ const resolvers = {
 
             throw new AuthenticationError('You need to be logged in!');
         },
+        addFriend: async(parent, { friendId }, context) => {
+            if (context.user) {
+                const updatedUser = await User.findOneAndUpdate({ _id: context.user._id }, { $addToSet: { friends: friendId } }, { new: true }).populate('friends');
+
+                return updatedUser;
+            }
+
+            console.log(context.user)
+            throw new AuthenticationError('You need to be logged in!');
+        }
 
     }
 };
